@@ -1,0 +1,4 @@
+@import '~bootstrap/scss/functions'; //載入bootstrap套用變數的方法
+@import './helpers/variables'; //自訂義的變數
+@import '~bootstrap/scss/bootstrap';
+@import './dashboard';
