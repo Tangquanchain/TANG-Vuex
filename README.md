@@ -1,5 +1,3 @@
-# vuecli3test
-
 ## Project setup
 ```
 npm install
