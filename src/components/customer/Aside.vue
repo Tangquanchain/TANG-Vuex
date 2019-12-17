@@ -155,12 +155,6 @@ body {
   font-size: 16px;
 }
 
-@media (max-width:375px) {
-  .cartProduct_txt{
-    font-size:2px;
-  }
-}
-
 .btn-size {
   border: 1px solid $black;
   margin: 7px 0px;

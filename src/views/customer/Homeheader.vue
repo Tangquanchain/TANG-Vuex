@@ -219,6 +219,12 @@ $white: #fff;
   transform: translateX(-450px) !important;
 }
 
+@media (max-width:375px) {
+  .wrap.active{
+    transform: translateX(-300px)!important;
+  }
+}
+
 .img-container {
   width: 100%;
   height: 100%;
