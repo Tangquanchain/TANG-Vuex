@@ -115,6 +115,19 @@ $breakcrumb-color: rgba(221, 217, 217, 0.6);
   }
 }
 
+@media (max-width: 375px) {
+  .breakcrumb::before {
+    width: 80%;
+  }
+  .breakcrumb-txt{
+    width: 50px;
+    height: 50px;
+     span{
+       font-size: 24px;
+     }
+  }
+}
+
 .complete-btn-txt {
   font-family: "Anton", sans-serif;
   border: none;

@@ -148,7 +148,7 @@
           >
             <i class="fas fa-times position-absolute text-white" style="bottom: 3px; right: 7px;"></i>
           </button>
-          <div class="row">
+          <div class="row no-gutters">
             <div class="col-6">
               <img
                 class="serchModal-img"

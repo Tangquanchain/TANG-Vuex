@@ -181,6 +181,15 @@ export default {
   }
 }
 
+@media (max-width: 375px) {
+  .breakcrumb::before {
+    width: 70% !important;
+  }
+  .breakcrumb-txt {
+    margin: 0 42px 0 42px !important;
+  }
+}
+
 .orderquestion-flash {
   animation: orderquestion-flash 4.2s infinite;
   vertical-align: middle;
