@@ -39,6 +39,12 @@ export default {
 }
 
 .wrap.active {
-  transform: translateX(-450px) !important;
+  transform: translateX(-450px)!important;
+}
+
+@media (max-width:375px) {
+  .wrap.active{
+    transform: translateX(-300px)!important;
+  }
 }
 </style>

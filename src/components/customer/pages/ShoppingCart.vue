@@ -86,6 +86,7 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
+import $ from 'jquery';
 export default {
   data () {
     return {
@@ -102,7 +103,21 @@ export default {
       });
     },
     addtoCart (id, qty = 1) {
-      this.$store.dispatch('cartsMudules/addtoCart', { id, qty });
+      this.$store.dispatch('cartsMudules/addtoCart', { id, qty }).then((response) => {
+        this.$store.dispatch('cartsMudules/getCartProduct');
+        $('html,body').animate({ scrollTop: '0px' }, 900);
+        this.$store.dispatch('cartsMudules/addupdateMessage', {
+          message: response.data.data
+        });
+        $('.side_icon').toggleClass('animated');
+        $('.wrap').toggleClass('active');
+        $('.aside').toggleClass('active');
+        $('.Screen-modal').toggleClass('cart-modal-open');
+        $('.cart-modal').addClass('cart-modal-open');
+        $('body').addClass('scrollClose');
+      }).catch((error) => {
+        console.log(error);
+      })
     },
     btnChange (value) {
       if (value === -1 && this.AllNum <= 1) {
@@ -115,8 +130,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('productMudles', ['AllProduct']),
-    ...mapGetters('productMudles', ['KeyTxt'])
+    ...mapGetters('productMudles', ['AllProduct', 'KeyTxt'])
   },
   created () {
     this.itemId = this.$route.params.itemId;

@@ -32,10 +32,6 @@ export default {
           context.dispatch('formdataerrorupdateMessage', {
             message: `Wrong Number.`
           });
-          // new Vue().$bus.$emit(
-          //   'order:push',
-          //   `Wrong Number.`
-          // );
         }
       });
     },
@@ -63,9 +59,6 @@ export default {
       context.commit('MESSAGESPUSH', messages);
       context.dispatch('removeMessageWithTiming', timestamp);
     },
-    // removeMessage (context, num) {
-    //   context.commit('MESSAGEREMOVE', num);
-    // },
     removeMessageWithTiming (context, timestamp) {
       setTimeout(() => {
         context.commit('MESSAGETIMEING', timestamp);
@@ -85,7 +78,7 @@ export default {
     formdataerrorremoveMessageWithTiming (context, timestamp) {
       setTimeout(() => {
         context.commit('FORMMESSAGETIMEING', timestamp);
-      }, 150000);
+      }, 8000);
     }
   },
   mutations: {

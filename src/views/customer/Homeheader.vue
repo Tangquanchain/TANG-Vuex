@@ -192,8 +192,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('productsMudles', ['Menproducts']),
-    ...mapGetters('productsMudles', ['Toolproducts'])
+    ...mapGetters('productsMudles', ['Menproducts', 'Toolproducts'])
   },
   created () {
     this.getManProducts();

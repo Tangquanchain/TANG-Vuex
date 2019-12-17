@@ -123,14 +123,10 @@ export default {
         }
       });
     },
-    ...mapActions('productsMudles', ['Hotactive']),
-    ...mapActions('productsMudles', ['Styleactive']),
-    ...mapActions('productsMudles', ['Toolsactive']),
-    ...mapActions('productsMudles', ['getAllProduct'])
+    ...mapActions('productsMudles', ['Hotactive', 'Styleactive', 'Toolsactive', 'getAllProduct'])
   },
   computed: {
-    ...mapGetters('productsMudles', ['KeyTxt']),
-    ...mapGetters('productsMudles', ['AllProduct'])
+    ...mapGetters('productsMudles', ['KeyTxt', 'AllProduct'])
   },
   created () {
     this.getAllProduct();

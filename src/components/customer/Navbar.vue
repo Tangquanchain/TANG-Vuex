@@ -138,10 +138,10 @@
       aria-hidden="true"
     >
       <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 768px;">
-        <div class="modal-content bg-dark">
+        <div class="modal-content">
           <button
             type="button"
-            class="btn modal-close position-absolute rounded-circle"
+            class="btn modal-close position-absolute rounded-circle d-none d-md-block"
             style="top: -15px; right: -25px;"
             data-dismiss="modal"
             aria-label="Close"
@@ -151,6 +151,7 @@
           <div class="row">
             <div class="col-6">
               <img
+                class="serchModal-img"
                 src="https://images.unsplash.com/photo-1559895166-835a49fb90d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60"
                 alt
               />
@@ -204,7 +205,7 @@ import $ from 'jquery';
 import AlertConpon from '../customer/AlertCoupon';
 import { mapGetters, mapActions } from 'vuex';
 export default {
-  props: ['carts'],
+  // props: ['carts'],
   components: {
     AlertConpon
   },
@@ -215,11 +216,6 @@ export default {
   },
   methods: {
     ...mapActions('cartsMudules', ['getCartProduct']),
-    // getCartProduct () {
-    //   const vm = this;
-    //   // vm.$bus.$emit('cartnum:push', vm.cartsLen);
-    //   vm.$bus.$emit('cartfinish:push', vm.carts);
-    // },
 
     BtnCoupon () {
       this.$store.dispatch('cartsMudules/updateMessage', {
@@ -430,6 +426,12 @@ $white: #fff;
 }
 .position-absolute {
   position: absolute !important;
+}
+
+@media (max-width:375px) {
+ .serchModal-img{
+   width: 250px;
+ }
 }
 
 .form-group {

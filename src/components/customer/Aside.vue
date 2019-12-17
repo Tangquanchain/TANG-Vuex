@@ -95,8 +95,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('cartsMudules', ['cart']),
-    ...mapGetters('cartsMudules', ['cartTotal'])
+    ...mapGetters('cartsMudules', ['cart', 'cartTotal'])
   }
 };
 </script>
@@ -132,6 +131,15 @@ body {
   }
 }
 
+@media (max-width:375px) {
+  .aside{
+    &.active{
+      width:300px;
+      transform: translateX(300px);
+    }
+  }
+}
+
 .aside_title {
   margin-top: 30px;
   font-family: "Open Sans", sans-serif;
@@ -145,6 +153,12 @@ body {
 .cartProduct_txt {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
+}
+
+@media (max-width:375px) {
+  .cartProduct_txt{
+    font-size:2px;
+  }
 }
 
 .btn-size {

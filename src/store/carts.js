@@ -1,6 +1,5 @@
 
 import axios from 'axios';
-import $ from 'jquery';
 export default {
   user: null,
   namespaced: true,
@@ -37,24 +36,16 @@ export default {
         product_id: id,
         qty
       };
-      axios.post(api, { data: cart }).then(response => {
-        context.commit('LOADING', false, { root: true });
-        context.commit('STATUS', '');
-        if (response.data.success) {
-          context.dispatch('getCartProduct');
-          $('html,body').animate({ scrollTop: '0px' }, 900);
-          // vm.$bus.$emit('cart:push');
-          context.dispatch('addupdateMessage', {
-            message: response.data.data
-          });
-          // new Vue().$bus.$emit('message:push', response.data.data, 'info');
-          $('.side_icon').toggleClass('animated');
-          $('.wrap').toggleClass('active');
-          $('.aside').toggleClass('active');
-          $('.Screen-modal').toggleClass('cart-modal-open');
-          $('.cart-modal').addClass('cart-modal-open');
-          $('body').addClass('scrollClose');
-        }
+      return new Promise((resolve, reject) => { // 參考 https://stackoverflow.com/questions/40165766/returning-promises-from-vuex-actions
+        axios.post(api, { data: cart }).then(response => {
+          if (response.data.success) {
+            resolve(response); // 成功時
+            context.commit('LOADING', false, { root: true });
+            context.commit('STATUS', '');
+          } else {
+            reject(new Error('失敗'));
+          }
+        });
       });
     },
     removeCart (context, id) {

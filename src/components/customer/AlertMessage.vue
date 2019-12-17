@@ -47,7 +47,7 @@ export default {
 }
 
 .alert {
-  background: rgba(228, 226, 226, 0.8);
+  background: rgb(228, 226, 226);
   border: 0;
   padding: 30px;
 }

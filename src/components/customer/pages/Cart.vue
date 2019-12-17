@@ -226,10 +226,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('cartsMudules', ['cart']),
-    ...mapGetters('cartsMudules', ['cartTotal']),
-    ...mapGetters('cartsMudules', ['cartFinal_Total']),
-    ...mapGetters('cartsMudules', ['cartProduct'])
+    ...mapGetters('cartsMudules', ['cart', 'cartTotal', 'cartFinal_Total', 'cartProduct'])
   },
   created () {
     this.getCartProduct();
